@@ -66,7 +66,7 @@ class Login extends React.Component<Myprops, any>{
     render() {
         return (
             <>
-            <h1> LOGIN FORM </h1>
+            <h1> LOGIN </h1>
                 <div>
                     <form onSubmit={this.handleSubmit}>
 

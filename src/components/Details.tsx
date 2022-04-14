@@ -216,6 +216,19 @@ class Details extends React.Component<Myprops, Mystate>{
                 })
 
         }
+        const handlePrintClick = (index: any) => {
+
+            const employee_id = array[index].employee_id
+             console.log(employee_id);
+            axios.get("https://localhost:5001/api/employees/pdf/" + employee_id)
+                .then(res => {
+                    console.log(res)
+
+                
+                   
+                })
+
+        }
 
 
 
@@ -379,6 +392,9 @@ class Details extends React.Component<Myprops, Mystate>{
                                                 <button type="button" className='buttonDelete' onClick={() => handleDeleteClick(index)}>
                                                     Delete
                                                 </button>
+                                                <button type="button" className='buttonEdit' onClick={() => handlePrintClick(index)}>
+                                                    print
+                                                </button>
                                             </td>
 
                                         </tr>
@@ -411,6 +427,9 @@ class Details extends React.Component<Myprops, Mystate>{
 
                                                 <button type="button" className='buttonDelete' onClick={() => handleDeleteClick(index)}>
                                                     Delete
+                                                </button>
+                                                <button type="button" className='buttonSave' onClick={() => handlePrintClick(index)}>
+                                                    print
                                                 </button>
                                             </td>
 
